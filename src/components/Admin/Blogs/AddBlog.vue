@@ -1,7 +1,7 @@
 <template>
   <modal
     name="add-blog"
-    adaptive
+    scrollable
     height="auto"
     @before-close="
       resetForm();
