@@ -1,32 +1,53 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <Loading :show="returnLoadingState" />
+    <notifications position="top right" />
+    <AdminHeader v-if="currentRoute !== 'Error404' && isAdminRoute" />
+    <UserHeader v-else />
+    <transition name="fade" mode="out-in" appear>
+      <router-view></router-view>
+    </transition>
+    <Footer />
   </div>
 </template>
 
+<script>
+import UserHeader from "@/components/User/Header";
+import AdminHeader from "@/components/Admin/Header";
+import Footer from "@/components/Footer";
+import Loading from "@/components/Loading";
+
+import { mapGetters } from "vuex";
+
+export default {
+  components: {
+    UserHeader,
+    AdminHeader,
+    Footer,
+    Loading,
+  },
+  computed: {
+    ...mapGetters(["returnLoadingState"]),
+    currentRoute() {
+      return this.$route.name;
+    },
+    isAdminRoute() {
+      return this.$route.path.includes("admin");
+    },
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@use "./assets/sass/main";
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-out;
 }
 </style>

@@ -1,0 +1,50 @@
+@use "../abstracts" as *;
+
+.about {
+  color: $color-primary;
+
+  .subheader {
+    padding-bottom: 6rem;
+  }
+
+  .col {
+    @include respondMobile(medium) {
+      flex: 0 0 calc(100%);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+
+    @include respondMobile(medium) {
+      width: 50%;
+    }
+  }
+
+  &__content {
+    padding: 0 4rem;
+    text-align: justify;
+
+    h2 {
+      font-size: 2.8rem;
+    }
+  
+    p {
+      font-size: 1.8rem;
+      line-height: 1.5;
+  
+      .link {
+        font-size: inherit;
+      }
+    }
+
+    .social {
+      font-size: 2.4rem;
+    }
+
+    @include respondMobile(medium) {
+      padding: 4rem 2rem;
+    }
+  }
+}

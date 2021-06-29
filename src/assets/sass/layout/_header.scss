@@ -1,0 +1,17 @@
+.header {
+  ul {
+    list-style-type: none;
+
+    li {
+      .link__home {
+        font-size: 2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .link__blog, .link__about {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

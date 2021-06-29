@@ -1,0 +1,42 @@
+@use "../abstracts" as *;
+
+.project {
+  color: $color-primary;
+
+  .subheader {
+    padding-bottom: 6rem;
+  }
+
+  .col {
+    @include respondMobile(large) {
+      flex: 0 0 calc(100%);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 30px;
+
+    @include respondMobile(large) {
+      width: 50%;
+    }
+  }
+
+  &__content {
+    padding: 0 4rem;
+    text-align: justify;
+
+    h2 {
+      font-size: 2.8rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+      line-height: 1.5;
+    }
+
+    @include respondMobile(medium) {
+      padding: 4rem 2rem;
+    }
+  }
+}

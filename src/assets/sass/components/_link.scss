@@ -1,0 +1,37 @@
+@use "../abstracts" as *;
+
+.link {
+  color: $color-primary;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -.4rem;
+    border-bottom: 3px solid var(--color-theme);
+    transform: scaleX(0);
+    transition: all .3s ease;
+  }
+
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &__active {
+    &::after {
+      transform: scaleX(1);
+    }
+
+    &:hover {
+      &::after {
+        transform: scaleX(0);
+      }
+    }
+  }
+}

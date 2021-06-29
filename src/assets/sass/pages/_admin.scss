@@ -1,0 +1,32 @@
+@use "../abstracts" as *;
+
+.admin {
+  border-top: 1px solid #e0e0e0;
+  position: relative;
+  
+  &__nav {
+    min-height: calc(100vh - 57px);
+    position: relative;
+    left: 0;
+    transition: all .3s ease;
+
+    @include respondMobile(medium) {
+      position: absolute;
+    }
+  }
+
+  &__content {
+    position: relative;
+    left: 0;
+    transition: all .3s ease;
+    overflow: hidden;
+
+    @include respondMobile(medium) {
+      flex: 0 0 100% !important;
+    }
+  }
+
+  @include respondMobile(medium) {
+    height: calc(100vh - 50px);
+  }
+}

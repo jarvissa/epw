@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+.admin-blog {
+  background: #fff;
+  transition: all .3s ease;
+
+  &__image {
+    width: 100%;
+    
+    @include respondDesktop(medium) {
+      height: 170px;
+    }
+
+    @include respondSpecific(768px, 992px) {
+      height: 240px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    border: 1px solid #e0e0e0;
+
+    h2 {
+      color: $color-primary;
+      font-size: 2rem;
+      font-weight: normal;
+      text-align: center;
+    }
+  }
+
+  // &:hover {
+  //   .admin-blog__title::before {
+  //     transform: scaleX(0);
+  //   }
+  // }
+
+  @include respondSpecific(576px, 768px) {
+    width: 90%;
+  }
+
+  @include respondMobile(x-small) {
+    width: 80%;
+  }
+}

@@ -1,0 +1,14 @@
+@use "../abstracts" as *;
+
+.social {
+  a {
+    color: $color-primary;
+    transition: all .3s ease;
+    
+    &:not(:last-child) { margin-right: 1rem; }
+  }
+
+  &__link--email:hover { color: #0072c6; }
+  &__link--facebook:hover { color: #3b5998; }
+  &__link--github:hover { color: #333; }
+}

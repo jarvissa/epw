@@ -1,0 +1,12 @@
+@use "../abstracts" as *;
+
+html {
+  font-size: 62.5%;
+
+  @include respondMobile(medium) { font-size: 56.25%; }
+  @include respondMobile(small) { font-size: 50%; }
+}
+
+body {
+  font-family: $font-family;
+}

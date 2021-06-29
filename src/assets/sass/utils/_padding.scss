@@ -1,0 +1,25 @@
+@for $i from 0 through 12 {
+  .pa-#{$i} {
+    padding: 1rem * $i;
+  }
+  .px-#{$i} {
+    padding-left: 1rem * $i;
+    padding-right: 1rem * $i;
+  }
+  .py-#{$i} {
+    padding-top: 1rem * $i;
+    padding-bottom: 1rem * $i;
+  }
+  .pl-#{$i} {
+    padding-left: 1rem * $i;
+  }
+  .pt-#{$i} {
+    padding-top: 1rem * $i;
+  }
+  .pr-#{$i} {
+    padding-right: 1rem * $i;
+  }
+  .pb-#{$i} {
+    padding-bottom: 1rem * $i;
+  }
+}

@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+.admin-project {
+  width: 100%;
+  height: 25rem;
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position: 50% 25%;
+  background-color: #fff;
+  position: relative;
+  border: 1px solid #e0e0e0;
+
+  &__title {
+    color: $color-primary;
+    font-size: 3rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 100%);
+    width: max-content;
+  }
+
+  @include respondSpecific(992px, 1300px) {
+    height: 20rem;
+  }
+
+  @include respondMobile(small) {
+    width: 80%;
+    height: 30rem;
+  }
+}

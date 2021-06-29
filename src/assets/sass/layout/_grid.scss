@@ -1,0 +1,41 @@
+@use "../abstracts" as *;
+
+.container {
+  max-width: $container-width-xl;
+  margin: 0 auto;
+  padding: $grid-padding;
+
+  @include respondMobile(large) { max-width: $container-width-lg; }
+  @include respondMobile(medium) { max-width: $container-width-md; }
+  @include respondMobile(small) { max-width: $container-width-sm; }
+  @include respondMobile(x-small) { width: 100%; }
+}
+
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  padding: $grid-padding;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: $grid-margin;
+}
+
+.col {
+  padding: $grid-padding;
+
+  @for $i from 1 through 12 {
+    &.col-#{$i} {
+      flex: 0 0 (100% / (12 / $i));
+
+      @include respondMobile(medium) { flex: 0 0 50%; }
+      @include respondMobile(small) { flex: 0 0 100%; }
+    }
+  }
+
+  &.col-12 {
+    flex: 0 0 100%;
+  }
+}

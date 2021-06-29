@@ -1,0 +1,14 @@
+@use "../abstracts" as *;
+
+.subheader {
+  color: $color-primary;
+  text-align: center;
+
+  &__title {
+    font-size: 5rem;
+  }
+
+  &__description {
+    font-size: 1.8rem;
+  }
+}
